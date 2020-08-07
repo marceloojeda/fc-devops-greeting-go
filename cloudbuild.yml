@@ -5,9 +5,3 @@ steps:
     args: ["test", "."]
     env: ["GOPATH=."]
     dir: "./src"
-
-  - id: "Script running"
-    name: "gcr.io/cloud-builders/go"
-    args: ["run", "."]
-    env: ["GOPATH=."]
-    dir: "./src"
