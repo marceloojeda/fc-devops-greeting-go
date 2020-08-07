@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: greeting-go
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: greeting-go
+  template:
+    metadata:
+      labels:
+        app: greeting-go
+    spec:
+      containers:
+      - name: go
+        image: gcr.io/fullcycle-284222/fc-devops-greeting-go
+        ports:
+        - containerPort: 8000
+
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "200m"
+          limits:
+            cpu: "250m"
+            memory: "200Mi"
